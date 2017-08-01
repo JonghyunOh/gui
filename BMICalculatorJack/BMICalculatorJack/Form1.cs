@@ -23,6 +23,7 @@ namespace BMICalculatorJack
             float height = 0.0f;
             float weight = 0.0f;
             float result = 0.0f;
+            string resultStr = "";
 
             height = float.Parse(this.heightBox.Text);
             weight = float.Parse(this.weightBox.Text);
@@ -38,7 +39,22 @@ namespace BMICalculatorJack
                 //Metric
                 result = (weight) / ((height/100) * (height/100));
             }
-            this.resultLabel.Text = "Result\n" + result;
+
+            if (result >= 30.0f)
+            {
+                resultStr = "Obese";
+            } else if (result >= 25.0f && result <= 29.9) {
+                resultStr = "Overwieight";
+            }
+            else if (result >= 18.9f && result <=29.9)
+            {
+                resultStr = "Normal";
+            }else
+            {
+                resultStr = "Underweight";
+            }
+
+                this.resultBox.Text = "your figure is " + result + " and " + resultStr;
         }
     }
 }
