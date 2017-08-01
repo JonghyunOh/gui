@@ -29,6 +29,8 @@ namespace BMICalculatorJack
             weight = float.Parse(this.weightBox.Text);
 
             Boolean unitFlag = this.ImperialRadioBtn.Checked;
+
+            ValidationFigures(unitFlag, height, weight);
             
             if (unitFlag)
             {
@@ -43,18 +45,51 @@ namespace BMICalculatorJack
             if (result >= 30.0f)
             {
                 resultStr = "Obese";
+                this.resultBox.ForeColor = Color.Red;
             } else if (result >= 25.0f && result <= 29.9) {
                 resultStr = "Overwieight";
+                this.resultBox.ForeColor = Color.Orange;
             }
             else if (result >= 18.9f && result <=29.9)
             {
                 resultStr = "Normal";
-            }else
+                this.resultBox.ForeColor = Color.Green;
+            }
+            else
             {
                 resultStr = "Underweight";
+                this.resultBox.ForeColor = Color.Gray;
             }
 
                 this.resultBox.Text = "your figure is " + result + " and " + resultStr;
         }
+
+        private void ValidationFigures(Boolean unit, float pHeight, float pWeight)
+        {
+            if (unit)
+            {
+                //imperial validation
+                //over than 4ft, cannot be less than 70 pounds,
+                //it supposed to be kg.
+                if (pHeight > 4.0f && pWeight < 70.0f)
+                {
+                    this.ImperialRadioBtn.Checked = false;
+                    this.weightBox.Text = "" + pWeight / 0.45f;
+                }
+
+            } else
+            {
+                //metric validation
+                //120cm person cannot be over than 400kg,
+                //it supposed to be pounds.
+                if (pHeight > 120 && pWeight > 400)
+                {
+                    this.metricRadioBtn.Checked = false;
+                    this.weightBox.Text = "" + pWeight * 0.45f;
+                }
+            }
+        }
+
+        
     }
 }
