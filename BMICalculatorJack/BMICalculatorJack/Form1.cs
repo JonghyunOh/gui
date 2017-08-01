@@ -74,6 +74,7 @@ namespace BMICalculatorJack
                 if (pHeight > 4.0f && pWeight < 70.0f)
                 {
                     this.ImperialRadioBtn.Checked = false;
+                    this.metricRadioBtn.Checked = true;
                     this.weightBox.Text = "" + pWeight / 0.45f;
                 }
 
@@ -84,6 +85,7 @@ namespace BMICalculatorJack
                 //it supposed to be pounds.
                 if (pHeight > 120 && pWeight > 400)
                 {
+                    this.ImperialRadioBtn.Checked = true;
                     this.metricRadioBtn.Checked = false;
                     this.weightBox.Text = "" + pWeight * 0.45f;
                 }
