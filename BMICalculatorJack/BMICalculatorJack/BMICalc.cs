@@ -19,7 +19,14 @@ namespace BMICalculatorJack
             this.metricRadioBtn.Checked = false;
             this.resultBox.Text = "Hi!";
         }
-
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            this.ImperialRadioBtn.Checked = true;
+            this.metricRadioBtn.Checked = false;
+            this.resultBox.Text = "Hi!";
+            this.heightBox.Text = "";
+            this.weightBox.Text = "";
+        }
 
         private void submitButton_Click(object sender, EventArgs e)
         {
@@ -37,6 +44,7 @@ namespace BMICalculatorJack
                 result = calculation(unitFlag, height, weight);
                 displayResult(result);
             }
+           
             
         }
 
@@ -128,6 +136,9 @@ namespace BMICalculatorJack
             float hBox = 0.0f;
             float wBox = 0.0f;
 
+            this.HeightUnit.Text = "Cm";
+            this.WeightUnit.Text = "Kg";
+
             Boolean valid = ValidationNumbers(out hBox, out wBox);
 
             if (valid && this.metricRadioBtn.Checked)
@@ -151,7 +162,10 @@ namespace BMICalculatorJack
         private void ImperialRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             float hBox = 0.0f;
-            float wBox = 0.0f;  
+            float wBox = 0.0f;
+
+            this.HeightUnit.Text = "FT";
+            this.WeightUnit.Text = "Pounds";
 
             Boolean valid = ValidationNumbers(out hBox, out wBox);
 

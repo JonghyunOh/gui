@@ -32,12 +32,13 @@
             this.metricRadioBtn = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.weightBox = new System.Windows.Forms.TextBox();
-            this.submitBtn = new System.Windows.Forms.Button();
             this.ImperialRadioBtn = new System.Windows.Forms.RadioButton();
             this.heightBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.HeightUnit = new System.Windows.Forms.Label();
             this.WeightUnit = new System.Windows.Forms.Label();
+            this.submitBtn = new System.Windows.Forms.Button();
+            this.resetBtn = new System.Windows.Forms.Button();
             this.resultLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.resultBox = new System.Windows.Forms.TextBox();
@@ -52,12 +53,13 @@
             this.tableLayoutPanel1.Controls.Add(this.metricRadioBtn, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.weightBox, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.submitBtn, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.ImperialRadioBtn, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.heightBox, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.HeightUnit, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.WeightUnit, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.submitBtn, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.resetBtn, 1, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 41);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -99,17 +101,6 @@
             this.weightBox.Name = "weightBox";
             this.weightBox.Size = new System.Drawing.Size(142, 38);
             this.weightBox.TabIndex = 5;
-            // 
-            // submitBtn
-            // 
-            this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.Location = new System.Drawing.Point(154, 236);
-            this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(119, 31);
-            this.submitBtn.TabIndex = 6;
-            this.submitBtn.Text = "Calculate BMI";
-            this.submitBtn.UseVisualStyleBackColor = true;
-            this.submitBtn.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // ImperialRadioBtn
             // 
@@ -159,6 +150,28 @@
             this.WeightUnit.Size = new System.Drawing.Size(79, 25);
             this.WeightUnit.TabIndex = 7;
             this.WeightUnit.Text = "Pounds";
+            // 
+            // submitBtn
+            // 
+            this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.Location = new System.Drawing.Point(3, 236);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.Size = new System.Drawing.Size(119, 31);
+            this.submitBtn.TabIndex = 6;
+            this.submitBtn.Text = "Calculate BMI";
+            this.submitBtn.UseVisualStyleBackColor = true;
+            this.submitBtn.Click += new System.EventHandler(this.submitButton_Click);
+            // 
+            // resetBtn
+            // 
+            this.resetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetBtn.Location = new System.Drawing.Point(154, 236);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Size = new System.Drawing.Size(119, 31);
+            this.resetBtn.TabIndex = 6;
+            this.resetBtn.Text = "Reset";
+            this.resetBtn.UseVisualStyleBackColor = true;
+            this.resetBtn.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // resultLabel
             // 
@@ -229,6 +242,7 @@
         private System.Windows.Forms.TextBox resultBox;
         private System.Windows.Forms.Label HeightUnit;
         private System.Windows.Forms.Label WeightUnit;
+        private System.Windows.Forms.Button resetBtn;
     }
 }
 
